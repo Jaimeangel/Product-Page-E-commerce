@@ -90,7 +90,7 @@
 }
 .slideImagees{
     width: 100%;
-    max-width: 325px;
+    max-width: 400px;
 }
 .slide{
     position: relative;
@@ -129,13 +129,23 @@
     border-radius: 8px;
     width: 70px;
 }
-@media screen and (min-width:650px){
+@media screen and (min-width:660px){
     .wrap__app{
         flex-direction: row;
         padding: 2em;
     }
+    .slideImagees{
+        max-width: 325px;
+    }
+    .ctnImg img{
+        border-radius: 8px;
+    }
+    .btnSlide{
+        display: none;
+    }
     .listSlide{
         display: flex;
+        margin-top: 1em;
     }
 }
 

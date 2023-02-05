@@ -30,7 +30,7 @@ class SliderImages{
         ];
     }
 
-    ChangeImageId(type){
+    ChangeImageByArrow(type){
         if(type==='plus'){
             if(this.currentImage===4){
                 return
@@ -44,6 +44,10 @@ class SliderImages{
         }
         this.ChangeImage()
     }
+    ChangeImageByImage(number){
+        this.currentImage=number;
+        this.ChangeImage()
+    }
 
     loadContent(){
         const wrap=document.createElement('div');
@@ -54,7 +58,7 @@ class SliderImages{
         slide.classList.add('slide')
 
         const prevBtn=document.createElement('button')
-        prevBtn.onclick=()=>this.ChangeImageId('minus')
+        prevBtn.onclick=()=>this.ChangeImageByArrow('minus')
 
         prevBtn.classList.add('btnSlide')
         prevBtn.classList.add('prev')
@@ -69,7 +73,7 @@ class SliderImages{
         mainCtn.appendChild(mainImg)
 
         const nextBtn=document.createElement('button')
-        nextBtn.onclick=()=>this.ChangeImageId('plus')
+        nextBtn.onclick=()=>this.ChangeImageByArrow('plus')
 
         nextBtn.classList.add('btnSlide')
         nextBtn.classList.add('next')
@@ -82,8 +86,10 @@ class SliderImages{
         /* list little images */
         const listImg=document.createElement('div')
         listImg.classList.add('listSlide')
-        this.images.forEach(img=>{
+        this.images.forEach((img,index)=>{
+            const id=index+1
             const image=document.createElement('img')
+            image.onclick=()=>this.ChangeImageByImage(id)
             image.setAttribute('src',`${img.img_thb}`)
             listImg.append(image)
         })
