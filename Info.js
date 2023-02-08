@@ -24,30 +24,44 @@ function LoadInfoProduct(){
 
     /* All info about price product */
     const infoPrice=document.createElement('div')
+    infoPrice.classList.add('infoPrice')
 
     const priceProduct=document.createElement('h4')
-    priceProduct.textContent=`${product.discountPrice}`
+    priceProduct.classList.add('priceProduct')
+    priceProduct.textContent=`$${product.discountPrice}`
+
     const discountProduct=document.createElement('span')
-    discountProduct.textContent=`${product.discount}`
+    discountProduct.classList.add('discount')
+    discountProduct.textContent=`${product.discount}%`
+
     const priceDiscount=document.createElement('span')
-    priceDiscount.textContent=`${product.priceProduct}`
+    priceDiscount.classList.add('priceDiscount')
+    priceDiscount.textContent=`$${product.priceProduct}`
+
     infoPrice.append(priceProduct,discountProduct,priceDiscount)
 
     /* Actions by add product and button add to cart */
     const payActions=document.createElement('div')
+    payActions.classList.add('payActions')
 
     const btnCount=document.createElement('div')
+    btnCount.classList.add('btnCount')
 
     const btnPlus=document.createElement('button')
+    btnPlus.classList.add('btnOperations')
+    btnPlus.classList.add('plus')
     const iconPlus=document.createElement('i')
     iconPlus.classList.add('fa-solid')
     iconPlus.classList.add('fa-plus')
     btnPlus.append(iconPlus)
 
     const amountProduct=document.createElement('span')
+    amountProduct.classList.add('count')
     amountProduct.textContent=0
 
     const btnMinus=document.createElement('button')
+    btnMinus.classList.add('btnOperations')
+    btnMinus.classList.add('minus')
     const iconMinus=document.createElement('i')
     iconMinus.classList.add('fa-solid')
     iconMinus.classList.add('fa-minus')
@@ -56,7 +70,16 @@ function LoadInfoProduct(){
     btnCount.append(btnPlus,amountProduct,btnMinus)
 
     const btnPayment=document.createElement('button')
-    btnPayment.textContent=`Add to cart`
+    btnPayment.classList.add('btnPayment')
+    const iconCart=document.createElement('i')
+    iconCart.classList.add('fa-solid')
+    iconCart.classList.add('fa-cart-plus')
+    
+    const spanText=document.createElement('span')
+    spanText.textContent=`Add to cart`
+
+    btnPayment.append(iconCart,spanText)
+
     payActions.append(btnCount,btnPayment)
 
     wrapInfoProduct.append(infoTitles,infoPrice,payActions)

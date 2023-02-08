@@ -196,7 +196,98 @@ dialog::backdrop{
 
 }
 .infoProduct{
+    width: 100%;
+    padding: 1.5em;
+}
+.infoTitles{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+.infoTitles h3{
+    font-size: 1.4rem;
+}
+.infoTitles p{
+    text-align: justify;
+    line-height: 1.4em;
+    font-size: 0.9rem;
+}
+.infoPrice{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0.8em;
+}
+.infoPrice .priceProduct{
+    flex: 1 1 20%;
+    font-size: 1.6rem;
+}
+.infoPrice .discount{
+    flex:1 1 20%;
+    text-align: center;
+    background-color: var(--Pale_orange);
+    border-radius: 6px;
+    margin-left: 0.5em;
+    color: var(--Orange);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.infoPrice .priceDiscount{
+    flex:1 1 60%;
+    text-align: end;
+    color: var(--Grayish_blue);
+    font-weight: bold;
+    text-decoration: line-through;
+}
+.payActions{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5em;
+    gap: 0.6em;
+}
+.btnCount{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.btnCount .btnOperations{
+    background-color: var(--Light_grayish_blue);
+    flex: 1 1 45%;
+    border: none;
     padding: 1em;
+}
+.plus{
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+.minus{
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.count{
+    flex: 1 1 10%;
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: var(--Light_grayish_blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnPayment{
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--Orange);
+    color: white;
+    font-weight: bold;
+}
+.btnPayment i{
+    margin-right: 0.5em;
 }
 @media screen and (min-width:660px){
     .wrap__app{
