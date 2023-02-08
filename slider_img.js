@@ -89,7 +89,7 @@ class SliderImages{
         btnMax.classList.add('btnMax')
         const icon=document.createElement('i')
         icon.classList.add('fa-solid')
-        icon.classList.add('fa-maximize')
+        icon.classList.add('fa-expand')
         btnMax.append(icon)
 
         slide.append(prevBtn,mainCtn,nextBtn,btnMax)
