@@ -6,6 +6,7 @@
 }
 :root{
     --Orange: hsl(26, 100%, 55%);
+    --Orange_shadow:rgba(255,125,26,0.16);
     --Pale_orange: hsl(25, 100%, 94%);
 
     --Very_dark_blue: hsl(220, 13%, 13%);
@@ -93,7 +94,7 @@ button{
 }
 .slideImagees{
     width: 100%;
-    max-width: 400px;
+    max-width: 375px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,7 +106,7 @@ button{
     align-items: center;
 }
 .slideModal{
-    width: 430px;
+    width: 350px;
 }
 .btnSlide{
     position: absolute;
@@ -175,7 +176,7 @@ dialog::backdrop{
     background: rgba(46, 45, 45, 0.8);
 }
 .wrapModal{
-    max-width: 400px;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,6 +206,10 @@ dialog::backdrop{
     flex-direction: column;
     gap: 0.4em;
 }
+.infoTitles span{
+    color: var(--Orange);
+    font-weight: bold;
+}
 .infoTitles h3{
     font-size: 1.4rem;
 }
@@ -217,15 +222,16 @@ dialog::backdrop{
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 0.8em;
 }
 .infoPrice .priceProduct{
-    flex: 1 1 20%;
+    flex: 1 1 15%;
     font-size: 1.6rem;
 }
 .infoPrice .discount{
-    flex:1 1 20%;
+    flex:1 1 15%;
     text-align: center;
     background-color: var(--Pale_orange);
     border-radius: 6px;
@@ -233,9 +239,10 @@ dialog::backdrop{
     color: var(--Orange);
     font-weight: bold;
     font-size: 0.9rem;
+    padding: 0.4em;
 }
 .infoPrice .priceDiscount{
-    flex:1 1 60%;
+    flex:1 1 55%;
     text-align: end;
     color: var(--Grayish_blue);
     font-weight: bold;
@@ -248,7 +255,7 @@ dialog::backdrop{
     gap: 0.6em;
 }
 .btnCount{
-    width: 100%;
+    flex: 1 1 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -257,6 +264,8 @@ dialog::backdrop{
     flex: 1 1 45%;
     border: none;
     padding: 1em;
+    color: var(--Orange);
+    font-weight: bold;
 }
 .plus{
     border-top-left-radius: 7px;
@@ -278,20 +287,45 @@ dialog::backdrop{
     justify-content: center;
 }
 .btnPayment{
-    width: 100%;
+    flex: 1 1 100%;
     padding: 1em;
     border: none;
     border-radius: 7px;
     background-color: var(--Orange);
     color: white;
     font-weight: bold;
+    box-shadow: var(--Orange_shadow) 0px 3px 6px, var(--Orange_shadow) 0px 3px 6px;
 }
 .btnPayment i{
     margin-right: 0.5em;
 }
+@media screen and (min-width:426px){
+    .infoProduct{
+        max-width: 445px;
+    }
+    .btnCount{
+        flex: 1 1 40%;
+    }
+    .btnPayment{
+        flex: 1 1 50%;
+    }
+    .infoTitles p{
+        font-size: 1.1rem;
+    }
+    .infoPrice .priceProduct{
+        font-size: 1.8rem;
+    }
+    .infoPrice .discount{
+        font-size: 1.1rem;
+    }
+    .infoPrice .priceDiscount{
+        font-size: 1.1rem;
+    }
+}
 @media screen and (min-width:660px){
     .wrap__app{
         flex-direction: row;
+        justify-content: center;
         padding: 2em;
     }
     .slideImagees{
@@ -309,6 +343,16 @@ dialog::backdrop{
     }
     .btnMax{
         display: block;
+    }
+    .infoPrice .priceProduct{
+        max-width: 70px;
+    }
+    .infoPrice .discount{
+        max-width: 100px;
+    }
+    .infoPrice .priceDiscount{
+        text-align: start;
+        min-width: 250px;
     }
 }
 
@@ -357,9 +401,32 @@ dialog::backdrop{
         height: auto;
         justify-content: center;
     }
+    .infoTitles span{
+        font-size: 1.2rem;
+    }
+    .infoTitles h3{
+        font-size: 1.9rem;
+    }
+    .infoTitles p{
+        font-size: 1.2rem;
+        line-height: 1.2em;
+    }
+    .infoPrice .priceProduct{
+        font-size: 1.8rem;
+    }
+    .infoPrice .discount{
+        font-size: 1rem;
+    }
+    .infoPrice .priceDiscount{
+        font-size: 1.3rem;
+        min-width: 350px;
+    }
+    .btnCount .btnOperations{
+        padding: 1.7em;
+    }
 }
 
-@media screen and (min-width:1024px){
+@media screen and (min-width:1025px){
     .list{
         flex: 1 1 60%;
     }
@@ -369,5 +436,33 @@ dialog::backdrop{
     }
     .list ul li{
         justify-content: center;
+    }
+    .wrap__app{
+        gap: 4rem;
+        margin-top: 2rem;
+    }
+    .slideImagees{
+        max-width: 350px;
+    }
+    .infoProduct{
+        max-width: 400px;
+        padding: 0;
+    }
+    .slideModal{
+        width: 380px;
+        margin-top: 3rem;
+    }
+    .infoTitles span{
+        font-size: 1.4rem;
+    }
+    .infoTitles h3{
+        font-size: 2.1rem;
+    }
+    .infoTitles p{
+        font-size: 1.4rem;
+        line-height: 1.2em;
+    }
+    .btnCount .btnOperations{
+        padding: 2em;
     }
 }
