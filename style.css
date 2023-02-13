@@ -422,7 +422,7 @@ dialog::backdrop{
         min-width: 350px;
     }
     .btnCount .btnOperations{
-        padding: 1.7em;
+        padding: 1.3em;
     }
 }
 
@@ -441,6 +441,9 @@ dialog::backdrop{
         gap: 4rem;
         margin-top: 2rem;
     }
+    .wrapModal{
+        margin-top: 2.5rem;
+    }
     .slideImagees{
         max-width: 350px;
     }
@@ -450,7 +453,6 @@ dialog::backdrop{
     }
     .slideModal{
         width: 380px;
-        margin-top: 3rem;
     }
     .infoTitles span{
         font-size: 1.4rem;
@@ -463,6 +465,6 @@ dialog::backdrop{
         line-height: 1.2em;
     }
     .btnCount .btnOperations{
-        padding: 2em;
+        padding: 1.4em;
     }
 }

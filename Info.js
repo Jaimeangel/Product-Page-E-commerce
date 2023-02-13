@@ -54,11 +54,11 @@ function LoadInfoProduct(){
     iconPlus.classList.add('fa-solid')
     iconPlus.classList.add('fa-plus')
     btnPlus.append(iconPlus)
-
+    
     const amountProduct=document.createElement('span')
     amountProduct.classList.add('count')
     amountProduct.textContent=0
-
+    
     const btnMinus=document.createElement('button')
     btnMinus.classList.add('btnOperations')
     btnMinus.classList.add('minus')
@@ -66,6 +66,9 @@ function LoadInfoProduct(){
     iconMinus.classList.add('fa-solid')
     iconMinus.classList.add('fa-minus')
     btnMinus.append(iconMinus)
+    /* Counter function */
+    btnPlus.onclick=()=>CounterButton('plus')
+    btnMinus.onclick=()=>CounterButton('minus')
 
     btnCount.append(btnPlus,amountProduct,btnMinus)
 
@@ -87,3 +90,15 @@ function LoadInfoProduct(){
 }
 
 LoadInfoProduct()
+
+function CounterButton(type){
+    const counter=document.querySelector('.btnCount span.count');
+    const valueCounter=parseInt(counter.textContent);
+    if(type==='plus'){
+        if(valueCounter>20)return
+        counter.textContent=`${valueCounter+1}`
+    }else{
+        if(valueCounter===0)return
+        counter.textContent=`${valueCounter-1}`
+    }
+}
