@@ -46,6 +46,23 @@ class Cart{
             }
         }
     }
+    RemoveProductCart(nodoRemove,id){
+        nodoRemove.remove()
+
+        for (let i = 0; i < this.productsCart.length; i++) {
+            const element = this.productsCart[i];
+            if(element.id===id){
+                this.productsCart.splice(i,1)
+                console.log(this.productsCart)
+                break
+            }
+        }
+        if(!this.productsCart.length){
+            const nodoProducts=document.querySelector('.cartContent__content')
+            this.LoadUICartContent(nodoProducts)
+        }
+
+    }
     ProductCart(data){
         const nodoProducts=document.querySelector('.cartContent__content')
         if(nodoProducts.firstChild.classList.contains('noContentCart')){
@@ -78,17 +95,20 @@ class Cart{
         infoProduct.append(nameProduct,priceInfo)
 
         const btnDeleteProduct=document.createElement('button')
+        btnDeleteProduct.onclick=()=>this.RemoveProductCart(wrapProduct,data.id)
         btnDeleteProduct.classList.add('btnDelete')
-        const iconDelete=document.createElement('i')
+        btnDeleteProduct.textContent=`X`
+/*         const iconDelete=document.createElement('i')
         iconDelete.classList.add('fa-solid')
         iconDelete.classList.add('fa-trash-can')
-        btnDeleteProduct.append(iconDelete)
+        btnDeleteProduct.append(iconDelete) */
 
         wrapProduct.append(imgProduct,infoProduct,btnDeleteProduct)
         contentProducts.append(wrapProduct)
 
     }
     LoadUICartContent(nodoInsert){
+        nodoInsert.innerHTML=""
         if(!this.productsCart.length){
             const noContent=document.createElement('h3')
             noContent.classList.add('noContentCart')
