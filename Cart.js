@@ -32,6 +32,8 @@ class Cart{
         if(this.amountProducts>0){
             counterProducts.textContent=`${this.amountProducts}`
             counterProducts.classList.add('showCount')
+        }else if(this.amountProducts===0){
+            counterProducts.classList.remove('showCount')
         }
     }
     ModifyProductCart(data){
@@ -52,8 +54,9 @@ class Cart{
         for (let i = 0; i < this.productsCart.length; i++) {
             const element = this.productsCart[i];
             if(element.id===id){
+                this.amountProducts-=parseInt(element.amount)
                 this.productsCart.splice(i,1)
-                console.log(this.productsCart)
+                this.CounterCartProducts()
                 break
             }
         }
