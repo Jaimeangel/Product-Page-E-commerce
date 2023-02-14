@@ -42,6 +42,7 @@ button{
     justify-content: flex-start;
 }
 .carProducts{
+    cursor: pointer;
     flex: 1 1 10%;
     display: flex;
     justify-content: center;
@@ -82,7 +83,7 @@ button{
     font-weight: 700;
 }
 .show{
-    display: flex;
+    display: flex !important;
 }
 .list img{
     width: 20px;
@@ -313,6 +314,78 @@ dialog::backdrop{
 }
 .btnPayment i{
     margin-right: 0.5em;
+}
+.cartContent{
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    top: 45px;
+    right: -38px;
+    width: 310px;
+    border-radius: 10px;
+    border: 1px solid var(--Grayish_blue);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.cartContent__title{
+    padding: 1em;
+    border-bottom: 1px solid var(--Grayish_blue);
+    border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.cartContent__content{
+    min-height:150px;
+    padding: 1em;
+    border-radius: 10px;
+}
+.productContentCart{
+    margin-bottom: 0.7em;
+}
+.btnCheckout{
+    width: 100%;
+    padding: 1em;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--Orange);
+    color: white;
+}
+.noContentCart{
+    width: 100%;
+    min-height:150px;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapProductCart{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.wrapProductCart img{
+    width: 45px;
+    border-radius: 3px;
+}
+.infoProductCart{
+    width: 100%;
+    margin-left: 0.5rem;
+}
+.infoProductCart .nameProduct{
+    font-size: 0.9em;
+    width: 100%;
+}
+.infoProductCart .priceProduct{
+    font-size: 0.9em;
+    width: 100%;
+}
+.wrapProductCart .btnDelete{
+    border: none;
+    background-color: white;
+}
+.wrapProductCart .btnDelete i{
+    font-size: 1rem;
+    color: var(--Grayish_blue);
 }
 @media screen and (min-width:426px){
     .infoProduct{
