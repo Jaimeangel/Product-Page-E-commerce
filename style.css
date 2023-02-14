@@ -45,6 +45,21 @@ button{
     flex: 1 1 10%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.carProducts .count{
+    display: none;
+    position: absolute;
+    top: -10px;
+    right:0;
+    width: 23px;
+    height: 17px;
+    background: var(--Orange);
+    border-radius: 5px;
+}
+.showCount{
+    display: flex !important;
 }
 .user{
     flex: 1 1 8%;

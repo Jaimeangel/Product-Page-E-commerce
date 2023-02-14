@@ -1,4 +1,5 @@
 const product={
+    id:234242,
     partnerProduct:'Sneaker Company',
     nameProduct:'Fall Limited Edition Sneakers',
     descriptionProduct:'These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they all withstand everything the weather can offer.',
@@ -73,6 +74,13 @@ function LoadInfoProduct(){
     btnCount.append(btnPlus,amountProduct,btnMinus)
 
     const btnPayment=document.createElement('button')
+    btnPayment.onclick=()=>CartProducts.ChangeCounterCart({
+        id:product.id,
+        nameProduct:product.nameProduct,
+        price:product.discountPrice,
+        img:Slider.images[0].img_thb,
+        amount:parseInt(amountProduct.textContent)
+    })
     btnPayment.classList.add('btnPayment')
     const iconCart=document.createElement('i')
     iconCart.classList.add('fa-solid')
